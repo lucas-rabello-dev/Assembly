@@ -5,7 +5,6 @@ section .bss
     input resb 32
     len equ $ - input
 
-
 section .text
 global _start
 

@@ -13,7 +13,6 @@ _start:
 
     jmp exit
 
-
 exit:
     mov rax,60
     

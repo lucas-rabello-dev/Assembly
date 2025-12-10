@@ -1,3 +1,4 @@
+; versão que eu fiz de cabeça
 section .data
     output db "digite alguma coisa (q para sair)", 0
     len_output equ $ - output
@@ -22,6 +23,11 @@ _start:
     jmp while
 
 while:
+    mov rax, 1
+    mov rdi, 1
+    mov rsi, output
+    mov rdx, len_output
+    syscall
 
     mov rax, 0
     mov rdi, 0
@@ -30,10 +36,10 @@ while:
     syscall
 
     mov al, [input]
-    sub al, '0'
+    sub al, '0' ; subtrai o valor 48
 
     mov bl, [exit_value]
-    sub bl, '0'
+    sub bl, '0' ; subtrai o valor 48
 
     cmp al, bl
     
